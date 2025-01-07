@@ -1,0 +1,45 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.red-envelope {
+    width: 100px;
+    height: 140px;
+    background-color: red;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.red-envelope.opened {
+    background-color: white;
+}
+
+.red-envelope.opened::after {
+    content: url('reward.png'); /* 這是你顯示圖片的位置 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
