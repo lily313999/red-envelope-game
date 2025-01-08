@@ -15,11 +15,18 @@ const rewards = [
     'reward10.png', 'reward11.png'
 ];
 
-// 特定暱稱的紅包內容（固定的圖片）
+// 特定暱稱的紅包內容（喵喵固定的圖片）
 const specialRewards = [
     'special1.png', 'special2.png', 'special3.png',
     'special4.png', 'special5.png', 'special6.png',
     'special7.png', 'special8.png', 'special9.png'
+];
+
+// 特定暱稱的紅包內容（打老虎固定的圖片）
+const specialRewards2 = [
+    'tiger1.png', 'tiger2.png', 'tiger3.png',
+    'tiger4.png', 'tiger5.png', 'tiger6.png',
+    'tiger7.png', 'tiger8.png', 'tiger9.png'
 ];
 
 // 定義紅包的HTML元素
@@ -64,6 +71,10 @@ function setSpecialRewards() {
     currentRewards = [...specialRewards]; // 設定為特定的圖片
 }
 
+function setSpecialRewards2() {
+    currentRewards = [...specialRewards2]; // 設定為特定的圖片
+}
+
 // 處理暱稱輸入及顯示祝福
 startButton.addEventListener('click', () => {
     const nickname = document.getElementById('nickname').value.trim();
@@ -79,7 +90,9 @@ startButton.addEventListener('click', () => {
 
         // 檢查是否是特定的暱稱
         if (nickname === '喵喵') {
-            setSpecialRewards(); // 設置固定的紅包內容
+            setSpecialRewards(); // 設置喵喵固定的紅包內容
+        } else if (nickname === '今晚打老虎') {
+            setSpecialRewards2();// 設置打老虎固定的紅包內容
         } else {
             shuffleRewards(); // 隨機洗牌紅包內容
         }
@@ -106,6 +119,8 @@ resetButton.addEventListener('click', () => {
     // 重新顯示紅包內容
     if (greetingMessage.textContent.includes("喵喵")) {
         setSpecialRewards(); // 如果是喵喵，則使用固定的紅包內容
+    } else if (greetingMessage.textContent.includes("今晚打老虎")) {
+        setSpecialRewards2(); // 如果是打老虎，則使用固定的紅包內容
     } else {
         shuffleRewards(); // 否則隨機洗牌
     }
