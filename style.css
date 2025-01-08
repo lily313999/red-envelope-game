@@ -1,45 +1,77 @@
 /* style.css */
+
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    background-color: #f2f2f2;
+    text-align: center;
 }
 
-.game-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.container {
+    margin-top: 50px;
+}
+
+#nicknameSection {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+#gameArea {
+    margin-top: 30px;
 }
 
 .row {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    margin: 10px;
 }
 
-.red-envelope {
+.envelope {
     width: 100px;
-    height: 140px;
-    background-color: red;
+    height: 150px;
+    background-color: #ffcc00;
+    margin: 10px;
     border-radius: 10px;
     cursor: pointer;
     position: relative;
 }
 
-.red-envelope.opened {
-    background-color: white;
+.envelope.opened {
+    background-color: #fff;
 }
 
-.red-envelope.opened::after {
-    content: url('reward.png'); /* 這是你顯示圖片的位置 */
+.envelope img {
+    width: 80%;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
 }
 
+#greeting {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+#resetButton {
+    margin-top: 20px;
+}
