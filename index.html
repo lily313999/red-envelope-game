@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="row">
-            <div class="red-envelope" id="envelope1"></div>
-            <div class="red-envelope" id="envelope2"></div>
-            <div class="red-envelope" id="envelope3"></div>
+    <div class="container">
+        <!-- 輸入暱稱欄位 -->
+        <div id="nicknameSection">
+            <label for="nickname">請輸入您的暱稱：</label>
+            <input type="text" id="nickname" placeholder="輸入暱稱...">
+            <button id="startButton">確定</button>
         </div>
-        <div class="row">
-            <div class="red-envelope" id="envelope4"></div>
-            <div class="red-envelope" id="envelope5"></div>
-            <div class="red-envelope" id="envelope6"></div>
+
+        <!-- 顯示祝福語句 -->
+        <div id="greeting" style="display: none;">
+            <p id="greetingMessage"></p>
         </div>
-        <div class="row">
-            <div class="red-envelope" id="envelope7"></div>
-            <div class="red-envelope" id="envelope8"></div>
-            <div class="red-envelope" id="envelope9"></div>
+
+        <!-- 紅包遊戲區 -->
+        <div id="gameArea" style="display: none;">
+            <div class="row">
+                <div class="envelope" id="envelope1"></div>
+                <div class="envelope" id="envelope2"></div>
+                <div class="envelope" id="envelope3"></div>
+            </div>
+            <div class="row">
+                <div class="envelope" id="envelope4"></div>
+                <div class="envelope" id="envelope5"></div>
+                <div class="envelope" id="envelope6"></div>
+            </div>
+            <div class="row">
+                <div class="envelope" id="envelope7"></div>
+                <div class="envelope" id="envelope8"></div>
+                <div class="envelope" id="envelope9"></div>
+            </div>
+            <button id="resetButton" style="display: none;">再抽一次</button>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
