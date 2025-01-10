@@ -4,6 +4,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     text-align: center;
+    background-image: url('b003.png'); /* 設定背景圖片 */
+    background-size: cover; /* 讓圖片覆蓋整個背景 */
+    background-position: center; /* 圖片置中 */
+    background-repeat: no-repeat; /* 防止圖片重複 */
 }
 
 .container {
