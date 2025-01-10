@@ -75,11 +75,17 @@ function setSpecialRewards2() {
     currentRewards = [...specialRewards2]; // 設定為特定的圖片
 }
 
+// 儲存初始的暱稱
+let initialNickname = '';
+
 // 處理暱稱輸入及顯示祝福
 startButton.addEventListener('click', () => {
     const nickname = document.getElementById('nickname').value.trim();
 
     if (nickname) {
+        // 儲存初始暱稱
+        initialNickname = nickname;
+
         // 隱藏暱稱輸入欄位，顯示祝福語句
         nicknameSection.style.display = 'none';
         greetingMessage.textContent = `祝福 ${nickname} 新年好運到，這是你的幸運紅包，快來抽獎吧！`;
@@ -92,7 +98,7 @@ startButton.addEventListener('click', () => {
         if (nickname === '喵喵') {
             setSpecialRewards(); // 設置喵喵固定的紅包內容
         } else if (nickname === '今晚打老虎') {
-            setSpecialRewards2();// 設置打老虎固定的紅包內容
+            setSpecialRewards2(); // 設置打老虎固定的紅包內容
         } else {
             shuffleRewards(); // 隨機洗牌紅包內容
         }
@@ -116,11 +122,11 @@ resetButton.addEventListener('click', () => {
         envelope.innerHTML = ''; // 清空紅包內容
     });
 
-    // 重新顯示紅包內容
-    if (greetingMessage.textContent.includes("喵喵")) {
-        setSpecialRewards(); // 如果是喵喵，則使用固定的紅包內容
-    } else if (greetingMessage.textContent.includes("今晚打老虎")) {
-        setSpecialRewards2(); // 如果是打老虎，則使用固定的紅包內容
+    // 根據最初輸入的暱稱重新設定紅包內容
+    if (initialNickname === '喵喵') {
+        setSpecialRewards(); // 如果最初是喵喵，則使用固定的紅包內容
+    } else if (initialNickname === '今晚打老虎') {
+        setSpecialRewards2(); // 如果最初是打老虎，則使用固定的紅包內容
     } else {
         shuffleRewards(); // 否則隨機洗牌
     }
